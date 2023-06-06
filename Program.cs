@@ -1,11 +1,8 @@
 ﻿void ShowArray(string[] array)
 {
     for (int i = 0; i < array.Length; i++)
-    {
         if (array[i] != "") Console.WriteLine(array[i]);
-    }
 }
-
 string[] GetNewArray(string[] ar)
 {
     if (ar == null || ar.Length == 0) return null;
@@ -22,7 +19,10 @@ string[] GetNewArray(string[] ar)
                 current++;
             }
         }
+        if(current < ar.Length) Array.Resize(ref newArray, current);
         return newArray;
     }
 }
 string[] array1 = { "jih", "", "dg", "  ", "sqb", "qresds" };
+string[] array2 = GetNewArray(array1);
+ShowArray(array2);
