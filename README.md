@@ -24,3 +24,37 @@ void ShowArray(string[] array)
 string[] array1 = { "jih", "", "dg", "  ", "sqb", "qresds" };
 ```
 В методе `ShowArray` исключаем вывод пустых строк без символов.
+
+3. Создаём массив, принимающий на вход массив из строк. В теле метода проверяем, не пустой ли массив, который подаётся на вход.
+```cs
+string[] GetNewArray(string[] ar)
+{
+    if (ar == null || ar.Length == 0) return null;
+    else
+    {
+                    
+    }
+}
+```
+После этого в теле `else` создаём новый массив и временную переменную. Создаём цикл, пробегаемся по изначальному массиву, и проверяем каждый элемент на нужное нам количество символов в строке. Если условие выполняется, присваиваем текущий элемент старого массива текущему элементу нового.
+```cs
+string[] GetNewArray(string[] ar)
+{
+    if (ar == null || ar.Length == 0) return null;
+    else
+    {
+        string[] newArray = new string[ar.Length];
+        int current = 0;
+        for (int i = 0; i < ar.Length; i++)
+        {
+            if (ar[i] == null) continue;
+            if (ar[i].Length <= 3)
+            {
+                newArray[current] = ar[i];
+                current++;
+            }
+        }
+        return newArray;
+    }
+}
+```
